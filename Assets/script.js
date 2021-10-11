@@ -1,5 +1,5 @@
 let ApiKey = 'a5f1951d920262d2e977eef2129fc60f';
-let fiveDayApiKey = 'aa3ecc5e774335301d11fac95ad460dc';
+let fiveDayApiKey = '2b5c6242956ebaa4aa9ab9ed8dec6cbb';
 let nameInputEl = document.querySelector('#search');
 let userFormEl = document.querySelector('#user-form');
 let cityContainerEl = document.querySelector('#city-container');
@@ -43,8 +43,7 @@ let formSubmitHandler = function (event) {
 let getCity = function (getCity) {
   cityContainerEl.innerHTML = "";
   let apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + getCity + '&units=imperial' + '&appid=' + ApiKey;
-  let fiveDayApiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&units=imperial&appid=' + ApiKey;
-
+  let fiveDayApiUrl = '';
   fetch(apiUrl)
     .then(function (response) {
       if (response.ok) {
@@ -53,6 +52,7 @@ let getCity = function (getCity) {
           console.log(data.coord.lat)
           console.log(data.coord.lon)
 
+        fiveDayApiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&units=imperial&appid=' + ApiKey;
           displayRepos(data, getCity);
         });
       } else {
@@ -62,9 +62,7 @@ let getCity = function (getCity) {
     .catch(function (error) {
       alert('Unable to connect to Weather App');
     });
-
-
-// Next 5 days Weather Forecast
+ // Next 5 days Weather Forecast
     fetch(fiveDayApiUrl)
     .then(function (response) {
       if (response.ok) {
@@ -72,7 +70,6 @@ let getCity = function (getCity) {
           console.log(data1)
           console.log(data1.coord.lat)
           console.log(data1.coord.lon)
-
           displayRepos(data1, getCity);
         });
       } else {
@@ -82,21 +79,18 @@ let getCity = function (getCity) {
     .catch(function (error) {
       alert('Unable to connect to Weather App');
     });
-
-// let getNewCity = function (getNewCity) {
+ // let getNewCity = function (getNewCity) {
   // console.log(data.coord.lat)
   // console.log(data.coord.lon)
-
-
   // let latitude = data.coord.lat
   // let longitude = data.coord.lon
-  
-fiveCityContainerEl.innerHTML = "";
+ fiveCityContainerEl.innerHTML = "";
+ // data.coords.lat
+ // or data.coords.lon
+ };
 
-// data.coords.lat
-// or data.coords.lon
 
-};
+
 
 
 
@@ -147,31 +141,33 @@ let displayRepos = function (data, getCity) {
 }
 
 
-let fiveDayDisplayRepos = function (data1, getCity) {
-}
+// let fiveDayDisplayRepos = function (data1, getCity) {
+// }
 
 
 
 
 
+userFormEl.addEventListener('submit', formSubmitHandler);
 
 
 
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+// let getNewCity = function (getNewCity) {
+  // console.log(data.coord.lat)
+  // console.log(data.coord.lon)
 
 
+  // let latitude = data.coord.lat
+  // let longitude = data.coord.lon
+  
 
+// data.coords.lat
+// or data.coords.lon
 
-
-
-
-
-
-
-
-
-
-
-
+// ----------------------------------------------------------------
 
 // let dayAfter = new Date();
 // dayAfter.setDate(dayAfter.getDate() + 1);
@@ -196,7 +192,5 @@ let fiveDayDisplayRepos = function (data1, getCity) {
 // fiveCityContainerEl
 // }
 
-
-
-userFormEl.addEventListener('submit', formSubmitHandler);
-
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
