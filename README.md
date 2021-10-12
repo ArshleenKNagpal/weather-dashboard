@@ -2,7 +2,9 @@
 
 ## Project Description
 
-This is a weather dashboard application that allows a user to view the current weather conditions of a city and a 5-day weather forecast. When the user inputs a city, it gets stored into local storage. The application runs in the browser and runs on a third-party API and dynamically updating HTML and CSS powered by JavaaScript.
+This is a weather dashboard application that allows a user to view the current weather conditions of a city and a 5-day weather forecast. When the user inputs a city, it gets stored into local storage. The application runs in the browser and runs on 2 third-party API's 
+(https://openweathermap.org/current , https://openweathermap.org/api/one-call-api#current) 
+and dynamically updating HTML and CSS powered by JavaScript.
 
 ## Screenshot
 

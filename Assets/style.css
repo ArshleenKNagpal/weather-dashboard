@@ -21,16 +21,6 @@ body {
   font-size: 16px;
 }
 
-h1,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  margin: 0;
-  color: var(--secondary);
-  line-height: 1.25;
-}
 
 h2 {
   font-weight: 700;
@@ -47,9 +37,6 @@ main {
 p {
   font-size: 1.2rem;
 }
-
-
-
 
  .btn {
   font-size: 1.3rem;
@@ -82,8 +69,6 @@ button {
   box-shadow: 3px 3px var(--dark);
   transform: translate(-1px, -1px);
 }
-
-
 
  .btn:hover {
   color: var(--primary);
@@ -146,6 +131,14 @@ button {
   width: 700px;
 }
 
+.list-group2 {
+  width: 1300px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+
+
+}
 
 li {
   padding: 10px;
@@ -172,7 +165,16 @@ li {
   color: rgb(29, 153, 255);
 }
 
+.day1,
+.day2,
+.day3,
+.day4,
+.day5 {
+  background-color: var(--dark);
+  color: var(--primary);
 
+
+}
 
 /* CARDS */
 .card {
